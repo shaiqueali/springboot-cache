@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:springboot-cache}
+  main:
+    allow-bean-definition-overriding: true
+
+  cache:
+    caffeine:
+      spec: maximumSize=100, expireAfterWrite=5s
+
+server:
+  port: 9098
+  servlet:
+    context-path: /springboot-cache
+
+logging:
+  level:
+#    com.learning.springbootcache: DEBUG
+    org:
+      springframework:
+        cache: TRACE
